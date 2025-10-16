@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:23:30 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/15 16:14:32 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/16 11:56:25 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 
 int	ft_putstr(char *s)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (s[i])
+	len = 0;
+	while (s[len])
 	{
-		write(1, &s[i], 1);
-		i++;
+		len += write(1, &s[len], 1);
 	}
+	return (len);
 }
